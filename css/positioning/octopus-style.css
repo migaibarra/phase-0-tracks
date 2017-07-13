@@ -1,8 +1,6 @@
 .octopus {
-  position: absolute;
-  padding: 10px auto 0;
+  margin: 10px auto 0;
   z-index: -1;
-  outline: 1px solid red;
   display: block;
 }
 
@@ -13,7 +11,7 @@
 
 .glasses {
   position: relative;
-  margin: 110px 45px;
-  display: inline;
-  outline: 1px solid red;;
+  top: -188px;
+  margin: 0 auto 0;
+  display: block;
 }
