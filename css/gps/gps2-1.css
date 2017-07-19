@@ -1,0 +1,24 @@
+article{
+  background-color:blue;
+}
+
+p{
+  background-color:red;
+}
+
+.column-1{
+  position: relative;
+  width: 49%;
+  float: left;
+}
+
+.column-2{
+  display: float;
+  position: relative;
+  width: 49%;
+  float:right;
+}
+
+footer{
+  clear: both;
+}
