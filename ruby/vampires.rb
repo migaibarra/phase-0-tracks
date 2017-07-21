@@ -11,7 +11,7 @@ puts "What is your age?"
 
 age = gets.chomp.to_i # Prompting the individual for their age and converting to an integer value before assigning to the age variable
 
-puts "Also what year were you born?"
+puts "What year were you born?"
 
 birthyear = gets.chomp.to_i # Prompting for and assigning the birthyear variable
 
@@ -23,16 +23,17 @@ puts "Would you like to enroll in the company's health insurance? (Y/N)"
 
 insurance_resp = gets.chomp # Promping and assigning the response for health insurance
 
-if age == (2017 - birthyear) && garlic_bread_resp == "Y"
+# The following logic tries to determine if the user is a vampire or not
+if Name == "Drake Cula" || Name == "Tu Fang"
+  result = "Definitely a vampire."
+elsif age == (2017 - birthyear) && garlic_bread_resp == "Y"
   result = "Probably not a vampire."
-elsif age != (2017 - birthyear) && garlic_bread_resp == "N"
-  result = "Probably a vampire."
 elsif age != (2017 - birthyear) && garlic_bread_resp == "N" && insurance_resp == "N"
   result = "Almost certainly a vampire."
-elsif name == "Drake Cula" || "Tu Fang"
-  puts "Definitely a vampire."
+elsif age != (2017 - birthyear) && garlic_bread_resp == "N"
+  result = "Probably a vampire."
 else
-  puts "Results inconclusive."
+  result = "Results inconclusive."
+end
 
 puts result
-
