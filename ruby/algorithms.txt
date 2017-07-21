@@ -1,0 +1,43 @@
+## Elevator Algorithm
+#  Submission for Miguel A. Ibarra, Jr.
+
+#  USING AN ELEVATOR ALGORITHM
+
+- Determine which floor number you need to get to (should be given from prior instruction)
+- Stand in front of elevator door
+  - If need to go to an upper floor press the upper button
+  - If need to go to a lower floor press the lower button
+- Wait until elevator door opens
+- When the elevator door opens, walk into the elevator
+- Look for floor button panel (note can be behind)
+- Stand in front of button panel
+- Press the button with numeral corresponding with the floor number you need to get to (note in most cases the button will become visibly lit)
+- Wait inside the elevator for the doors to close and the elevator to start moving
+- Look for a screen that displays floor number or watch the lit button that was pressed
+- If the floor number that corresponds to the floor you need to get to appears on the screen when the door opens or the button that was pressed is no longer lit when the elevator door opens, you should step outside the elevator
+- You have reached the floor you wanted to get to, proceed with your activities
+
+#  HAND WASHING ALGORITHM
+
+- Look for a sink with a water faucet and soap (note that this can be liquid or bar soap)
+- Stand in front of the sink and determine what kind of faucet it is (traditional two-valve faucet, single level handle faucet, single knob faucet)
+  - If the faucet is a traditional faucet, turn the leftmost valve either clockwise or counter-clockwise until water flows at a rate of at least 0.9 gallons per minute
+    - Check the tempature of the water
+    - If the tempature is too warm for comfort (usually above 110 degrees fahrenheit) turn the rightmost water faucet clockwise or counter-clockwise to adjust the water tempature with cooler water
+    - Ensure the water tempature is warm but not too hot (between 95 and 110 degrees fahrenheit)
+  - If the faucet is a single level or knob faucet move the faucet handle leftward and push the handle up until water flows at a rate of at least 0.9 gallons per minute.
+    - Check the tempature of the water
+    - If the tempature is too warm for comfort (usually above 110 degrees fahrenheit) turn the knob or handle to the right to adjust the tempature with cooler water
+    - Ensure the water tempature is warm but not too hot (between 95 and 110 degrees fahrenheight)
+  - Wet both hand completely under the stream of water for at least 15 seconds
+  - Use a drop of liquid soap or rub a bar of soap such that the soap starts to lather
+  - Rub your hands together for at least 30 seconds
+    - Make sure to rub the back side of your hands
+    - Rub inbetween your fingers
+  - Remove any dirt underneath your fingernails
+  - Rinse your hands under the stream of water again to wash away the soap and gunk from your hands ensuring all remaining soap and gunk is removed
+    - If the faucet is a traditional faucet, turn the leftmost valve clockwise or counterclockwise to turn off the stream of water
+    - Note if the rightmost valve was used, turn the leftmost valve clockwise or counterclockwise to turn off the stream of water
+    - If the flacet is a single knob or lever faucet, push the handle or knob downward to turn off the stream of water
+  - Dry off hands with either paper towels or a traditional cotton towel
+  - You are done, you may continue on with your business, although please do wash again frequently!
