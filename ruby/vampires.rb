@@ -1,5 +1,6 @@
 ## Vampire Text Program for Exercise 4.5
 #  Authored by Miguel A. Ibarra, Jr.
+#  Added this comment to force a new change to my feature branch and add Tyler to my PR on GitHub
 
 puts "Hello welcome to Werewolf Inc. where we own the moonlight! We are in need of more werewolves."
 
