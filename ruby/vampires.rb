@@ -49,39 +49,50 @@ for num_of_employees in 1..num_of_employees # Creating a for loop to collect sur
   allergies[num_of_employees-1] = allergy
 
 
-  ## LOGIC PORTION ##
+  ### LOGIC PORTION ###
 
   # The following logic tries to determine if the user is a vampire or not
 
   # First checking if the person's name gives them away
   if Name[num_of_employees-1] == "Drake Cula" || Name[num_of_employees-1] == "Tu Fang"
-    result[num_of_employees-1] = "Definitely a vampire."
+    result[num_of_employees-1] = "definitely a vampire"
 
   # Next checking if the person's age matches with what is expected for their birthyear and if they like garlic bread
   elsif age[num_of_employees-1] != (2017 - birthyear[num_of_employees-1]) && garlic_bread_resp[num_of_employees-1] == "N" && insurance_resp[num_of_employees-1] == "N" # if the age doesn't match year and they don't like garlic bread
-    result[num_of_employees-1] = "Almost certainly a vampire." # They are almost certainly a vampire
+    result[num_of_employees-1] = "almost certainly a vampire" # They are almost certainly a vampire
 
   # Next checking to see if the person has told us if they have suspecious allergies
   elsif allergy.include? "sunshine" # Checking if the person responded with a suspicious allergy to sunshine
-    result[num_of_employees-1] = "Probably a vampire."
+    result[num_of_employees-1] = "probably a vampire"
 
   # Checking again if the person's age matches with what is expected for their birthyear and if they like garlic bread
-  elsif (age[num_of_employees-1] == (2017 - birthyear[num_of_employees-1]) && garlic_bread_resp[num_of_employees-1] == "Y") # if the age does match the year and they do like garlic bread
-    result[num_of_employees-1] = "Probably not a vampire." # the person is probably not a vampire
+  elsif (age[num_of_employees-1] == (2017 - birthyear[num_of_employees-1])) && ((garlic_bread_resp[num_of_employees-1] == "Y") || (insurance_resp[num_of_employees-1] == "Y"))
+    # if the age matches the expected year and they do like garlic bread or they want health insurance
+    result[num_of_employees-1] = "probably not a vampire" # the person is probably not a vampire
 
   # More logic to check the person's age, year and garlic bread preference
-  elsif age[num_of_employees-1] != (2017 - birthyear[num_of_employees-1]) && garlic_bread_resp[num_of_employees-1] == "N" # if the person's age doesn't match their year but they do not like garlic bread
-    result[num_of_employees-1] = "Probably a vampire." # They are probably a vampire
+  elsif (age[num_of_employees-1] != (2017 - birthyear[num_of_employees-1])) && ((garlic_bread_resp[num_of_employees-1] == "N") || (insurance_resp[num_of_employees-1] == "N"))
+    # if the person's age doesn't match their year and they do not like garlic bread or they don't want insurance
+    result[num_of_employees-1] = "probably a vampire" # They are probably a vampire
 
   # All other combinations of answers to the questions are indeterminate and we can't figure out if they are a vampire
   else
-    result[num_of_employees-1] = "Results inconclusive."
+    result[num_of_employees-1] = "results inconclusive"
   end
 
-  ## END OF LOGIC ##
+  ### END OF LOGIC ###
 
-  # Outputing the vampire determination
-  puts result[num_of_employees-1]
+  # Outputing the vampire determination; added fancy logic to change the repsonse depending on determination
+  if result[num_of_employees-1] == "results inconclusive"
+    puts "Umm... #{result[num_of_employees-1]}. We'll get back to you!"
+  elsif result[num_of_employees-1] == "probably not a vampire"
+    puts "Okay #{Name[num_of_employees-1]}, you are #{result[num_of_employees-1]}. You're hired!"
+  elsif result[num_of_employees-1] == "probably a vampire"
+    puts "Wait #{Name[num_of_employees-1]}, you are #{result[num_of_employees-1]}! You will be detained until we get to the bottom of this!"
+  elsif result[num_of_employees-1] == "almost certainly a vampire" || result[num_of_employees-1] == "definitely a vampire"
+    puts "You are #{result[num_of_employees-1]}! Who do you think you would fool! You are arrested!"
+  else
+  end
 
   # Now subtracting one from the counter
   num_of_employees -= 1
@@ -95,3 +106,6 @@ end
 # puts insurance_resp
 # puts result
 # puts allergies
+
+# Printing a line regarding the plot twist!
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
