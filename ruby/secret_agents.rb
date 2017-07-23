@@ -51,7 +51,30 @@ end
 
 # decrypt_method(encrypted_password, index)
 
-encrypt_method("abc", index)
-encrypt_method("zed", index)
-decrypt_method("bcd", index)
-decrypt_method("afe", index)
+# encrypt_method("abc", index)
+# encrypt_method("zed", index)
+# decrypt_method("bcd", index)
+# decrypt_method("afe", index)
+
+# decrypt_method(encrypt_method("swordfish", index), index)
+
+# For any secret agents:
+
+# To make the decrypt_method(encrypt_method(arg, index), index) work, note that the encrypt_method needs to output a variable which is accomplished by the 'return' key line 24. To output the results of the encrypt method only, please comment out line 25.
+
+puts "Would you like me to encrypt or decrypt a password?"
+
+result = gets.chomp
+
+puts "What is the password? (only use lowercase letters)"
+
+password = gets.chomp
+
+if result == "encrypt"
+  encrypt_method(password, index)
+elsif result == "decrypt"
+  decrypt_method(password, index)
+else
+end
+
+
