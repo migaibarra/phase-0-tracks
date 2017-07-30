@@ -91,19 +91,61 @@ client = {
 
 puts "This is the data that was filled in:"
 
+# This output the data that was filled in using the .each method to 
+# Show the data in a more easy to read way
 client.each do |k,v|
   puts "#{k}: #{v}"
 end
 
+# Now we want to know if the user wants to correct anything
 puts 'Do you need to update or correct anything, or type "none"?'
-response = gets.chomp.upcase
+response = gets.chomp.downcase # using downcase to trip up the subsequent while loop
 
-while response != "NONE"
+# While loop to change update the data in the client list:
+while response != "none" # While the response is not "none"
+
+	# Prompting the user for new data
 	puts "Which key do you need to update?"
-	key = gets.chomp
+	update_key = gets.chomp.to_sym
 	puts "What is the new value?"
-	value = gets.chomp
-	client.map!{|:key, value| [key, "%#{value}%"]}
+	new_value = gets.chomp
+
+	## Logic for the keys that take in data other than strings:
+
+	# For the "age" and "num_of_kids" keys change the data to integer data
+	if update_key == "age".to_sym || update_key == "num_of_kids".to_sym
+		new_value = new_value.to_i
+
+	# For the "picky" key, update the data to a boolean except for if the data
+	# Does not meet any condition, in which case simply output whatever
+	# The user typed in
+	elsif update_key == "picky".to_sym
+		if new_value.downcase == "true" || new_value.downcase == "yes"
+			new_value = true
+		elsif new_value.downcase == "false" || new_value.downcase == "no"
+			new_value = false
+		else
+			new_value = new_value # Just output whatever the user types
+		end
+	else
+	end
+	## end of Logic
+
+	# Update the client hash if the key that was typed in matches a key in the hash
+	client.update(client){|key, value| if key == update_key # Using update method
+		value = new_value
+	else
+		value = value
+	end}
+
+	# Prompt the user again to see if we need to update more data
 	puts  'Do you need to update anything else, or type "none"'
-	response = gets.chomp
+	response = gets.chomp.downcase
+end
+
+# Output the final data
+puts "This is the final input for the client that is saved:"
+
+client.each do |k,v|
+  puts "#{k}: #{v}"
 end
