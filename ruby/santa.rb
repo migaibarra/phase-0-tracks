@@ -4,11 +4,18 @@
 class Santa
 
 	# Initializing with a message anytime an instance of a Santa class is created
-	def initialize(gender, ethnicity)
+	def initialize(name, gender, ethnicity)
 		puts "Initializing Santa instance..."
-		# @name = name # Saving for later in case we want to save a name
+		@name = name # Adding a name varialbe to our Santa
 		@gender = gender
 		@ethnicity = ethnicity
+		if gender == "male" || gender == "bigender" # Code to add a beard attribute if the santa is male or bigender
+			beard = true
+		else
+			beard = false
+		end
+		puts name
+		puts "Does this santa have a beard? #{beard}"
 	end
 
 	reindeer_ranking = ["Rudolph","Dasher","Dancer","Prancer","Vixen",
@@ -29,14 +36,14 @@ end
 
 # Driver Code
 
-santas = []
-santas << Santa.new("agender", "black")
-santas << Santa.new("female", "Latino")
-santas << Santa.new("bigender", "white")
-santas << Santa.new("male", "Japanese")
-santas << Santa.new("female", "prefer not to say")
-santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
-santas << Santa.new("N/A", "N/A")
+# santas = []
+# santas << Santa.new("agender", "black")
+# santas << Santa.new("female", "Latino")
+# santas << Santa.new("bigender", "white")
+# santas << Santa.new("male", "Japanese")
+# santas << Santa.new("female", "prefer not to say")
+# santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
+# santas << Santa.new("N/A", "N/A")
 
 # Checking some of the instantiations of the code
 # santas.each{|santa|
@@ -46,8 +53,9 @@ santas << Santa.new("N/A", "N/A")
 # }
 
 santas = []
+example_names = ["Dillian", "Sarah", "Kris", "Michael", "Michaela", "Sasha", "Candy"]
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 example_genders.length.times do |i|
-  santas << Santa.new(example_genders[i], example_ethnicities[i])
+  santas << Santa.new(example_names[i], example_genders[i], example_ethnicities[i])
 end
