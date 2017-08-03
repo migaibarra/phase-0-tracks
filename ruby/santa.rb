@@ -3,6 +3,12 @@
 
 class Santa
 
+	# Adding attr_reader for our getter variables
+	attr_reader :ethnicity
+
+	# Adding attr_accessor for our setter variables
+	attr_accessor :age, :reindeer_ranking, :gender
+
 	# Initializing with a message anytime an instance of a Santa class is created
 	def initialize(name, gender, ethnicity)
 		puts "Initializing Santa instance..."
@@ -33,18 +39,22 @@ class Santa
 		puts "That was a good #{cookie_type}!"
 	end
 
-	# Adding Getter methods for my Santa Class:
-	def age # Returning Age outside the class
-		@age
-	end
+	# # Adding Getter methods for my Santa Class (Release 2):
+	# def age # Returning Age outside the class
+	# 	@age
+	# end
 
-	def ethnicity # Returning ethnicity outside the class
-		@ethnicity
-	end
+	# def ethnicity # Returning ethnicity outside the class
+	# 	@ethnicity
+	# end
 
-	def reindeer_ranking
-		@reindeer_ranking
-	end
+	# def reindeer_ranking
+	# 	@reindeer_ranking
+	# end
+
+	# def gender
+	# 	@gender
+	# end
 
 	# Adding Setter methods to my Santa Class:
 	def celebrate_birthday=(dummy_variable)
@@ -54,11 +64,11 @@ class Santa
 	def get_mad_at=(reindeer)
 		@reindeer_ranking.push(@reindeer_ranking.select{|reindeer_names|
 			reindeer_names == reindeer})
+		@reindeer_ranking.delete_at(@reindeer_ranking.index(reindeer) || @reindeer_ranking.length)
 	end
 
-
-	def gender=(new_gender) # Setter method to change gender
-		@gender = new_gender
+	def new_gender=(gender) # Setter method to change gender
+		@gender = gender
 	end
 
 end
@@ -102,13 +112,13 @@ example_genders.length.times do |i|
   santas << Santa.new(example_names[i], example_genders[i], example_ethnicities[i])
 end
 
+puts santas[3].ethnicity
+
 santas[3].celebrate_birthday = "dummy variable"
 puts santas[3].age
 
-# dillians_new_gender = "cisfemale"
-# dillians_gender = santas[0].gender(dillians_new_gender)
-# puts dillians_gender
-
-santas[0].get_mad_at = "Rudolph"
+santas[0].get_mad_at = "Vixen"
 puts santas[0].reindeer_ranking
 
+santas[0].new_gender = "cisfemale"
+puts santas[0].gender
