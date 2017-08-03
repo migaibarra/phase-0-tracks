@@ -14,7 +14,7 @@ module Shout
 
 	# Release 3 Version using Mixins
 	def yell_angrily(words)
-		words + "!!!" + " :("
+		words + "!!!" + " ..."
 	end
 
 	def yelling_happily(words)
@@ -24,11 +24,11 @@ end
 
 ## Driver code
 
-angry_message = "WTF"
-
-happy_message = "yayyy"
-
 # Release 1 Calls
+
+# angry_message = "WTF"
+
+# happy_message = "yayyy"
 
 # p Shout.yell_angrily(angry_message)
 
@@ -36,6 +36,18 @@ happy_message = "yayyy"
 
 # Release 3 Calls
 
-p angry_message.yell_angrily
+class Donald_Trump
+	include Shout
+end
 
-p happy_message.yelling_happily
+class Cheerleader
+	include Shout
+end
+
+president = Donald_Trump.new
+
+seahawks_cheerleader = Cheerleader.new
+
+p president.yell_angrily("FAKE NEWS")
+
+p seahawks_cheerleader.yelling_happily("Go SEAHAKS")
