@@ -1,0 +1,33 @@
+## Psuedocoding Poorman's Hangman
+#  This is being planned by Miguel A. Ibarra, Jr.
+
+## Etymological Note: This game is called Poorman's Hangman because unlike a real game of hangman, the user will not see a little drawing of the stick figure getting hanged.
+
+_________
+|       |
+|       |0           ___   ___
+|      ---          /  /__/  /  
+|       |          /  ___   / 
+|      / \        /  /  /  /
+|____________    /__/  /__/
+
+# Step 1: Player 1 will input a word into the game for Player 2 to guess
+
+# Step 2: The computer will generate the number of character guesses based on the length of the word Player 1 provides
+
+	# A player will have at least 4 character guesses no matter how short the word
+	# A word with 6 or 7 characters will have 5 character guesses
+	# A word with 8 or 9 characters will have 6 character guesses
+	# A word with 10 or 11 characters will have 7 character guesses
+	# A word longer than 12 characters will have 8 character guesses
+	# When character guesses run out, the user will have one last attempt to guess the word
+
+# Step 3: Player 2 will attempt complete the puzzle within the allotted number of character guesses or they can attempt to guess the word altogether.
+
+	# Note any character guess that is the same as a prior character guess will not count against the user; however, a word guess will count against the user
+	# For the last guess the user will be prompted to give a word
+	# For every guess the computer will see if a character is incuded in the word
+	# Only if the guess matches a character for the given word then that letter will be revealed as a prompt, otherwise that letter will not be shown
+	# Additionally the number of the user has left will be prompted
+
+# Step 4: If Player 2 guesses the word correctly then he or she will be prompted with a congratulatory message, otherwise he or she will be (virtually) hanged.
