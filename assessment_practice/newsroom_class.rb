@@ -22,7 +22,7 @@ class Newsroom
 	def total_salaries()
 		employees = @reporter.keys
 		salaries = employees.each { |employee| salary_for(employee) }
-		@overhead_budget = salaries.inject(0, :+)
+		@ = salaries.inject(0, :+)
 	end
 end
 
