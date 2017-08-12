@@ -105,3 +105,25 @@ VirusPredictor.generate_report(STATE_DATA)
 
 #=======================================================================
 # Reflection Section
+
+# The two different hash syntaxes in the state_data file is the "rocket hash" (=>)
+# syntax and the JSON hash (:) syntax methods. JSON hash converts the key to
+# a keyword automatically making it somewhat useful for generic keywords,
+# althought the older way of designating hash keys with rocket hashes can be 
+# rather helpful
+
+# The require_relative accepts another ruby file that is relative to the file
+# that you are working in. This is complement to the require method which is 
+# a stricter method that works for other file extensions
+
+# You can iterate though a hash by using built in hash methods like .each and .map
+# which actually go through the hash and runs the block of code that is intended
+# to be performed
+
+# The virus_effects hash had passed instance variables which are already
+# accessible to any instance method within the class. In other words, it was DRY
+# as it is not necessary to pass these variables in the method
+
+# I think it really helped refactoring the virus_effects method because it helped
+# me understand that instance variables are accessible throughout the class
+# something that I still have a hard time grasping.
