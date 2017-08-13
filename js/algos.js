@@ -2,32 +2,32 @@
 // Coded by Miguel A. Ibarra, Jr
 
 
-// // RELEASE 0:
-// var samplePhrases = ["Hey!", "Wazzup!", "Aloha", "How's it goin'!"], charCount = [];
+// RELEASE 0:
+var samplePhrases = ["Hey!", "Wazzup!", "Aloha", "How's it goin'!"], charCount = [];
 
-// // The following code sorts the characters by implementing the bubble sort algorithm to get
-// // the phrase with the longest character count
+// The following code sorts the characters by implementing the bubble sort algorithm to get
+// the phrase with the longest character count
 
-// for(counter = 0; counter< samplePhrases.length; counter ++){
-// 	charCount[counter] = samplePhrases[counter].length
-// }
+for(counter = 0; counter< samplePhrases.length; counter ++){
+	charCount[counter] = samplePhrases[counter].length
+}
 
-// function bubbleSort(phraseArray){
-// 	for(counter = 1; counter < phraseArray.length; counter ++){
-// 		if(phraseArray[counter].length > phraseArray[counter - 1].length){
-// 			phraseArray[counter] = phraseArray.splice(counter-1, 1, phraseArray[counter])[0];
-// 		}
-// 	}
-// 	return phraseArray
-// }
+function bubbleSort(phraseArray){
+	for(counter = 1; counter < phraseArray.length; counter ++){
+		if(phraseArray[counter].length > phraseArray[counter - 1].length){
+			phraseArray[counter] = phraseArray.splice(counter-1, 1, phraseArray[counter])[0];
+		}
+	}
+	return phraseArray
+}
 
-// // While loop to continue sorting using Bubble sort until the longest phrase is at index 0
-// while(samplePhrases[0].length != Math.max.apply(Math, charCount)){
-// 	samplePhrases = bubbleSort(samplePhrases);
-// }
+// While loop to continue sorting using Bubble sort until the longest phrase is at index 0
+while(samplePhrases[0].length != Math.max.apply(Math, charCount)){
+	samplePhrases = bubbleSort(samplePhrases);
+}
 
-// // Outputing longest phrase:
-// console.log(samplePhrases[0])
+// Outputing longest phrase:
+console.log(samplePhrases[0])
 
 
 // RELEASE 1:
@@ -58,3 +58,32 @@ console.log(matcher(person1, animal1)) // should equal false
 console.log(matcher(fireman, policeman)) // should equal false
 console.log(matcher(fireman, mountainclimber)) // should equal true
 console.log(matcher(mountainclimber, policeman)) //should equal false
+
+// RELEASE 2:
+
+var arrayLength = 17, randomWords = new Array(arrayLength),
+	chars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
+			 "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
+			 "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
+			 "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+for (i = 0; i <= arrayLength; i++){
+	var wordLength = Math.floor((Math.random() * 10)), word = new Array();
+	for(j = 0; j <= wordLength; j++){
+		word.push(chars[Math.floor((Math.random() * 52 + 1))]);
+	}
+	randomWords[i] = word.join("");
+}
+
+console.log(randomWords)
+
+for(counter = 0; counter< randomWords.length; counter ++){
+	charCount[counter] = randomWords[counter].length
+}
+
+// While loop to continue sorting using Bubble sort until the longest phrase is at index 0
+while(randomWords[0].length != Math.max.apply(Math, charCount)){
+	randomWords = bubbleSort(randomWords);
+}
+
+console.log(randomWords[0])
