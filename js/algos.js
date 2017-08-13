@@ -62,20 +62,24 @@ console.log(matcher(mountainclimber, policeman)) //should equal false
 // RELEASE 2:
 
 var arrayLength = 17, randomWords = new Array(arrayLength),
+	// An array of all characters in the English language:
 	chars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
 			 "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
 			 "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
 			 "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
+// This loop creates a "random" word of varying length of 1 to 10 characters
+// Please note, these words are not truely random, but rather psuedorandom
 for (i = 0; i <= arrayLength; i++){
 	var wordLength = Math.floor((Math.random() * 10)), word = new Array();
 	for(j = 0; j <= wordLength; j++){
-		word.push(chars[Math.floor((Math.random() * 52 + 1))]);
+		word.push(chars[Math.floor((Math.random() * 52))]);
 	}
 	randomWords[i] = word.join("");
 }
 
-console.log(randomWords)
+// Driver Code:
+console.log(randomWords) // lists the array of random words
 
 for(counter = 0; counter< randomWords.length; counter ++){
 	charCount[counter] = randomWords[counter].length
@@ -86,4 +90,4 @@ while(randomWords[0].length != Math.max.apply(Math, charCount)){
 	randomWords = bubbleSort(randomWords);
 }
 
-console.log(randomWords[0])
+console.log(randomWords[0]) // returns the longest random word
