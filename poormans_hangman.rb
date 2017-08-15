@@ -1,6 +1,11 @@
 ## Poorman's Hangman Game
 #  Coded by Miguel A. Ibarra Jr.
 
+# words = require "../../../../"
+
+
+
+
 class HangMan
   # Setters and Getter for this game:
   attr_reader :guess_count, :is_correct, :prompt
