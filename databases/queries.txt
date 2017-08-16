@@ -73,3 +73,45 @@ SELECT student_id, name, race_id, race FROM students, race WHERE students.race_i
 17008|Pawel|1|White/Caucasian
 17009|Rafael|5|Two or more races
 17010|Jennifer|1|White/Caucasian
+
+// Question 5: Deleting a row of data that meets a condition
+
+// Removing Pawel because he decided to go to the NYC campus
+
+sqlite> DELETE FROM students
+   ...> WHERE student_id=17008;
+sqlite> SELECT * FROM students;
+17001|Sally|1|false|7|4|6|1992|10
+17002|Monica|5|true|7|10|17|1985|10
+17003|Foray|2|false|7|7|9|1988|10
+17004|Alexa|2|true|7|12|16|1990|10
+17005|Dat|3|false|7|1|27|1991|10
+17006|Emily|1|false|7|12|12|1989|10
+17007|Steve|1|false|7|9|5|1980|10
+17009|Rafael|5|true|7|8|17|1990|10
+17010|Jennifer|1|false|7|5|3|1986|10
+
+// // RELEASE 3 // //
+
+// Trying a few different joints on the school.db database:
+
+// LEFT JOIN
+sqlite> SELECT name, birth_year, birth_day, month FROM students
+   ...> LEFT JOIN birth_month
+   ...> ON students.birth_month_id = birth_month.id;
+Sally|1992|6|April
+Monica|1985|17|October
+Foray|1988|9|July
+Alexa|1990|16|December
+Dat|1991|27|January
+Emily|1989|12|December
+Steve|1980|5|September
+Rafael|1990|17|August
+Jennifer|1986|3|May
+
+// RIGHT JOIN
+sqlite> SELECT name, birth_year, birth_day FROM students
+   ...> RIGHT JOIN birth_month
+   ...> ON students.birth_month_id = birth_month.id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
