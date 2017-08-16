@@ -1,0 +1,75 @@
+// Question 1: Showing the data from the students table:
+
+sqlite> SELECT * FROM students;
+17001|Sally|1|false|7|4|6|1992|9
+17002|Monica|5|true|7|10|17|1985|9
+17003|Foray|2|false|5|7|9|1988|9
+17004|Alexa|2|true|3|12|16|1990|9
+17005|Dat|3|false|2|1|27|1991|9
+17006|Emily|1|false|2|12|12|1989|9
+17007|Steve|1|false|2|9|5|1980|9
+17008|Pawel|1|false|6|9|20|1988|9
+17009|Rafael|5|true|4|8|17|1990|9
+17010|Jennifer|1|false|5|5|3|1986|9
+
+// Question 2: Updating the data for the students table:
+
+// All the students are updated because they completed week 9:
+sqlite> UPDATE students
+   ...> SET weeks_coding = 10;
+sqlite> SELECT * FROM students;
+17001|Sally|1|false|7|4|6|1992|10
+17002|Monica|5|true|7|10|17|1985|10
+17003|Foray|2|false|5|7|9|1988|10
+17004|Alexa|2|true|3|12|16|1990|10
+17005|Dat|3|false|2|1|27|1991|10
+17006|Emily|1|false|2|12|12|1989|10
+17007|Steve|1|false|2|9|5|1980|10
+17008|Pawel|1|false|6|9|20|1988|10
+17009|Rafael|5|true|4|8|17|1990|10
+17010|Jennifer|1|false|5|5|3|1986|10
+
+// The students not living in Washington needs to be updated because they...
+// started the onsite portion:
+qlite> UPDATE students
+   ...> SET state_id = 7
+   ...> WHERE state_id != 7;
+sqlite> SELECT * FROM students;
+17001|Sally|1|false|7|4|6|1992|10
+17002|Monica|5|true|7|10|17|1985|10
+17003|Foray|2|false|7|7|9|1988|10
+17004|Alexa|2|true|7|12|16|1990|10
+17005|Dat|3|false|7|1|27|1991|10
+17006|Emily|1|false|7|12|12|1989|10
+17007|Steve|1|false|7|9|5|1980|10
+17008|Pawel|1|false|7|9|20|1988|10
+17009|Rafael|5|true|7|8|17|1990|10
+17010|Jennifer|1|false|7|5|3|1986|10
+
+// Question 3: Displaying info from two tables:
+
+sqlite> SELECT * FROM students, race WHERE students.race_id = race.id;
+17001|Sally|1|false|7|4|6|1992|10|1|White/Caucasian
+17002|Monica|5|true|7|10|17|1985|10|5|Two or more races
+17003|Foray|2|false|7|7|9|1988|10|2|Black/African American
+17004|Alexa|2|true|7|12|16|1990|10|2|Black/African American
+17005|Dat|3|false|7|1|27|1991|10|3|Asian
+17006|Emily|1|false|7|12|12|1989|10|1|White/Caucasian
+17007|Steve|1|false|7|9|5|1980|10|1|White/Caucasian
+17008|Pawel|1|false|7|9|20|1988|10|1|White/Caucasian
+17009|Rafael|5|true|7|8|17|1990|10|5|Two or more races
+17010|Jennifer|1|false|7|5|3|1986|10|1|White/Caucasian
+
+// Question 4: Displaying a narrower selection of columns:
+
+SELECT student_id, name, race_id, race FROM students, race WHERE students.race_id = race.id;
+17001|Sally|1|White/Caucasian
+17002|Monica|5|Two or more races
+17003|Foray|2|Black/African American
+17004|Alexa|2|Black/African American
+17005|Dat|3|Asian
+17006|Emily|1|White/Caucasian
+17007|Steve|1|White/Caucasian
+17008|Pawel|1|White/Caucasian
+17009|Rafael|5|Two or more races
+17010|Jennifer|1|White/Caucasian
