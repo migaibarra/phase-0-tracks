@@ -1,0 +1,32 @@
+// These are the commands we ran for Release 2:
+// Coded by John Simoni and Miguel A. Ibarra, Jr.
+
+sqlite> SELECT users.first_name, reviews.comment, businesses.name FROM reviews
+   ...> JOIN users ON reviews.user_id = users.id
+   ...> JOIN businesses ON reviews.business_id = businesses.id;
+Miguel|Really good tirisu|Molly Moon
+John|Food undercooked|Molly Moon
+Tyler|No water service|Grundy Hollow Wedding Chapel
+
+
+sqlite> SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews
+   ...> JOIN users ON reviews.user_id = users.id
+   ...> JOIN businesses ON reviews.business_id = businesses.id;
+Miguel|Ibarra|Molly Moon|5|Really good tirisu
+John|Simoni|Molly Moon|3|Food undercooked
+Tyler|Makepeace|Grundy Hollow Wedding Chapel|1|No water service
+
+
+sqlite> SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews
+   ...> JOIN users ON reviews.user_id = users.id
+   ...> JOIN businesses ON reviews.business_id = businesses.id;
+Miguel|Ibarra|Molly Moon|5|Really good tirisu
+John|Simoni|Molly Moon|3|Food undercooked
+Tyler|Makepeace|Grundy Hollow Wedding Chapel|1|No water service
+
+
+sqlite> SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews
+   ...> JOIN users ON reviews.user_id = users.id
+   ...> JOIN businesses ON reviews.business_id = businesses.id WHERE businesses.name = "Grundy Hollow Wedding Chapel";
+Tyler|Makepeace|Grundy Hollow Wedding Chapel|1|No water service
+Contact GitHub API Training Shop Blog About
