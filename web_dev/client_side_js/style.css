@@ -1,0 +1,10 @@
+body {
+	font-family: "Anevir";
+	color: white;
+	background-image: "space_background.jpg";
+}
+
+img {
+	position: block;
+	margin: 0 auto 0;
+}
