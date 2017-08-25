@@ -1,10 +1,12 @@
-body {
-	font-family: "Anevir";
+html {
+	font-family: "Avenir" !important;
 	color: white;
-	background-image: "space_background.jpg";
+	background-image: url("space_background.jpg");
 }
 
 img {
-	position: block;
-	margin: 0 auto 0;
+	display: block;
+	position: relative;
+	max-width: 100%;
+	margin: auto;
 }
