@@ -1,0 +1,15 @@
+html {
+	font-family: Avenir;
+	color: white;
+	background-image: url("exotic_picture.jpg");
+}
+
+body {
+	text-align: center;
+	vertical-align: center;
+}
+
+#package {
+	background-color: black;
+	opacity: 0.65;
+}
