@@ -8,7 +8,21 @@
 
 <h1>Go to exotic destinations!!!</h1>
 
-<p id="package1">Packages starting at $399<span>plus tax</span></p>
+<p id="package">Packages starting at <br> <span id="price">$399</span> <span id="tax">plus tax</span></p>
 
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+	$( document ).ready(function() {
+		console.log( "ready!" );
+	});
+	$( "#package" ).hover(function() {
+		$(this).css("padding", "25px");
+	}, function() {
+		$(this).css("padding", "15px");
+	})
+	$( "#package" ).click(function() {
+		alert("Get ready for some awesome deals!")
+	})
+</script>
 </body>
 </html>

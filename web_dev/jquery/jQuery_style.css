@@ -11,5 +11,14 @@ body {
 
 #package {
 	background-color: black;
+	padding: 15px;
 	opacity: 0.65;
+}
+
+#price{
+	font-size: 32px;
+}
+
+#tax {
+	font-size: 10px;
 }
