@@ -7,6 +7,11 @@ set :public_folder, File.dirname(__FILE__) + '/static'
 db = SQLite3::Database.new("students.db")
 db.results_as_hash = true
 
+get '/campus' do
+	@campus = db.execute("SELECT campus FROM students")
+	erb :campus
+end
+
 # show students on the home page
 get '/' do
   @students = db.execute("SELECT * FROM students")

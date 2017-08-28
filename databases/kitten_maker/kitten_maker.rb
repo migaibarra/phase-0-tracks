@@ -19,6 +19,8 @@ create_table_cmd = <<-SQL
   )
 SQL
 
+
+
 # create a kittens table (if it's not there already)
 db.execute(create_table_cmd)
 
@@ -28,11 +30,11 @@ db.execute(create_table_cmd)
 # add LOOOOTS of kittens!
 # so. many. kittens. 
 #KittenExplosion
-def create_kitten(db, name, age)
+def create_contact(db, id, name, address)
   db.execute("INSERT INTO kittens (name, age) VALUES (?, ?)", [name, age])
 end
 
-10000.times do
+50.times do
   create_kitten(db, Faker::Name.name, 0)
 end
 
