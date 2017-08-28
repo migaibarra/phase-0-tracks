@@ -1,0 +1,8 @@
+Notes on Web Apps for Ruby
+By Miguel A. Ibarra, Jr.
+
+1. There are quite a few other web apps that run for Ruby besides Sinatra like Cuba, Padrino, Lotus, as well as the most popular framework, Rails.
+
+2. You can use other databases other than SQL with Sinatra. You simply have to specify with the "require" command.
+
+3. A web stack is a collection of software used for web development including tyhe langauages, operating systems, etc used to build a web site.
